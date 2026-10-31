@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Hanken_Grotesk } from "next/font/google";
+import { RoughFilter } from "@/components/doodles";
 import { ScrollEffects } from "@/components/scroll-effects";
 import { TopBar } from "@/components/top-bar";
 import { site } from "@/content/links";
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
       </head>
       <body>
+        <RoughFilter />
         <a className="skip" href="#main">
           Skip to content
         </a>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Sparkle, Squiggle } from "@/components/doodles";
 import { ExtLink } from "@/components/ext-link";
 import { highlights } from "@/content/highlights";
 import { email, site, socials } from "@/content/links";
@@ -10,8 +11,12 @@ export default function Home() {
       <section className="hero">
         <div className="wrap hero-in">
           <h1>
-            <span>Sambhav</span>
-            <span>Gupta</span>
+            <span className="name">
+              <span>Sambhav</span>
+              <span>Gupta</span>
+              <Squiggle />
+              <Sparkle />
+            </span>
           </h1>
           <div className="hero-text">
             <p className="caps">
