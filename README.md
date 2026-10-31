@@ -22,7 +22,7 @@ Other scripts: `npm run lint`, `npm run typecheck`, `npm run build`, `npm start`
 
 | File | What it controls |
 | --- | --- |
-| `links.ts` | Social links, resume URL, Writing rows, the Instagram row under Fitness, Contact postcards, site name and tagline, and **`email`**. |
+| `links.ts` | Social links, Writing rows, the Instagram row under Fitness, Contact postcards, site name and tagline, and **`email`**. |
 | `projects.ts` | Project rows (`category` is `"opensource"` or `"personal"`, optional `stack`). Also `lastKnownContributions`, the fallback for the GitHub card. |
 | `experience.ts` | Places, roles, dates and the two highlight lines per place. `current: true` shows the dates in the accent colour. |
 | `races.ts` | Fitness cards in date order. `tone` is `"time"`, `"quiet"` or `"now"`. |

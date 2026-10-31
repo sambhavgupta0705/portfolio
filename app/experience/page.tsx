@@ -1,7 +1,5 @@
-import { ExtLink } from "@/components/ext-link";
 import { PageHead } from "@/components/page-head";
 import { experience } from "@/content/experience";
-import { resumeUrl } from "@/content/links";
 import { sectionMetadata } from "@/lib/metadata";
 import { getSection } from "@/lib/sections";
 
@@ -10,11 +8,7 @@ export const metadata = sectionMetadata("experience");
 export default function ExperiencePage() {
   return (
     <>
-      <PageHead section={getSection("experience")}>
-        <ExtLink className="btn" style={{ marginTop: 28 }} href={resumeUrl}>
-          View resume <span className="arr" aria-hidden="true">↗</span>
-        </ExtLink>
-      </PageHead>
+      <PageHead section={getSection("experience")} />
       <div className="wrap body places">
         {experience.map((place) => (
           <div className="place" key={place.name}>

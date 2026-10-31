@@ -14,9 +14,6 @@ export const email = "sambhavwork75@gmail.com";
 
 export const githubLogin = "sambhavgupta0705";
 
-export const resumeUrl =
-  "https://drive.google.com/file/d/1NvDwaH18HST1lXd5z_nhTdWxq7-BaOkR/view?usp=sharing";
-
 export const links = {
   linkedin: "https://www.linkedin.com/in/sambhavgupta0705/",
   github: "https://github.com/sambhavgupta0705",
@@ -30,7 +27,6 @@ export const socials = [
   { label: "GitHub", href: links.github },
   { label: "X", href: links.x },
   { label: "Instagram", href: links.instagram },
-  { label: "Resume", href: resumeUrl },
 ];
 
 /** Rows on the Writing page. */
