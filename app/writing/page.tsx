@@ -8,16 +8,16 @@ export const metadata = sectionMetadata("writing");
 
 export default function WritingPage() {
   return (
-    <section className="detail">
+    <section>
       <PageHead section={getSection("writing")} />
-      <div className="lines">
-        {writing.map((w) => (
-          <ExtLink className="line" key={w.href} href={w.href}>
+      <div className="rows" style={{ marginTop: 48 }}>
+        {writing.map((w, i) => (
+          <ExtLink className="row" key={w.href} href={w.href}>
             <div>
-              <div className="l-title">{w.title}</div>
-              <div className="l-sub">{w.description}</div>
+              <h2 className="r-title" data-reveal style={{ ["--i" as string]: i * 2 }}>{w.title}</h2>
+              <div className="r-sub" data-reveal style={{ ["--i" as string]: i * 2 + 1 }}>{w.description}</div>
             </div>
-            <span className="l-side">{w.side} ↗</span>
+            <span className="r-side" data-reveal style={{ ["--i" as string]: i * 2 + 2 }}>{w.side} ↗</span>
           </ExtLink>
         ))}
       </div>

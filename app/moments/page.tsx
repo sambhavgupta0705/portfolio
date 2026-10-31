@@ -8,29 +8,29 @@ export const metadata = sectionMetadata("moments");
 
 export default function MomentsPage() {
   return (
-    <section className="detail">
+    <section>
       <PageHead section={getSection("moments")} />
-      <div className="lines">
+      <div className="rows" style={{ marginTop: 48 }}>
         {moments.length === 0 ? (
-          <div className="line off">
+          <div className="row off up" style={{ ["--d" as string]: 3 }}>
             <div>
-              <div className="l-title">Event moments</div>
-              <div className="l-sub">Each event gets its own line, with photos</div>
+              <h2 className="r-title">Event moments</h2>
+              <div className="r-sub">Each event gets its own entry, with photos.</div>
             </div>
-            <span className="l-side">Adding soon</span>
+            <span className="r-side">Adding soon</span>
           </div>
         ) : (
           moments.map((m) => (
-            <div className="line off" key={`${m.title}-${m.date}`}>
+            <div className="row off" key={`${m.title}-${m.date}`} data-reveal>
               <div>
-                <div className="l-title">{m.title}</div>
-                <div className="l-sub">{m.place}</div>
+                <h2 className="r-title">{m.title}</h2>
+                <div className="r-sub">{m.place}</div>
               </div>
-              <span className="l-side">{m.date}</span>
+              <span className="r-side">{m.date}</span>
               {m.photos && m.photos.length > 0 && (
                 <div className="mphotos">
                   {m.photos.map((file) => (
-                    <Photo key={file} dir="moments" file={file} alt={`${m.title}, ${m.place}`} sizes="(min-width: 760px) 240px, 45vw" />
+                    <Photo key={file} dir="moments" file={file} alt={`${m.title}, ${m.place}`} sizes="(min-width: 900px) 220px, 45vw" />
                   ))}
                 </div>
               )}

@@ -9,34 +9,32 @@ export const metadata = sectionMetadata("experience");
 
 export default function ExperiencePage() {
   return (
-    <section className="detail">
+    <section>
       <PageHead section={getSection("experience")}>
-        <ExtLink className="btn" href={resumeUrl}>
-          View resume ↗
+        <ExtLink className="btn" style={{ marginTop: 28 }} href={resumeUrl}>
+          View resume <span className="arr" aria-hidden="true">↗</span>
         </ExtLink>
       </PageHead>
-      <div className="lines">
+      <div className="places">
         {experience.map((place) => (
-          <div className="group" key={place.name}>
-            <h2 className="l-title">{place.name}</h2>
-            <div>
-              <ul className="roles">
-                {place.roles.map((r) => (
-                  <li key={`${r.title}-${r.org ?? ""}-${r.dates}`}>
-                    <span className="g-role">
-                      {r.title}
-                      {r.org && <small>{r.org}</small>}
-                    </span>
-                    <span className={`l-side${r.current ? " now" : ""}`}>{r.dates}</span>
-                  </li>
-                ))}
-              </ul>
-              <ul className="hl">
-                {place.highlights.map((h) => (
-                  <li key={h}>{h}</li>
-                ))}
-              </ul>
-            </div>
+          <div className="place" key={place.name}>
+            <h2 data-reveal>{place.name}</h2>
+            <ul className="roles" data-reveal style={{ ["--i" as string]: 1 }}>
+              {place.roles.map((r) => (
+                <li key={`${r.title}-${r.org ?? ""}-${r.dates}`}>
+                  <span className="role">
+                    {r.title}
+                    {r.org && <small>{r.org}</small>}
+                  </span>
+                  <span className={`dates${r.current ? " now" : ""}`}>{r.dates}</span>
+                </li>
+              ))}
+            </ul>
+            <ul className="hl" data-reveal style={{ ["--i" as string]: 2 }}>
+              {place.highlights.map((h) => (
+                <li key={h}>{h}</li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>

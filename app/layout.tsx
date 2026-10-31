@@ -1,17 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Caveat, DM_Mono, Hanken_Grotesk } from "next/font/google";
-import { RoughFilter } from "@/components/doodles";
+import { Hanken_Grotesk } from "next/font/google";
+import { ScrollEffects } from "@/components/scroll-effects";
+import { StageProvider } from "@/components/stage";
 import { TopBar } from "@/components/top-bar";
 import { site } from "@/content/links";
+import { stage } from "@/content/stage";
 import "./globals.css";
 
-const hanken = Hanken_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-hanken", display: "swap" });
-const dmMono = DM_Mono({ subsets: ["latin"], weight: "400", variable: "--font-dm-mono", display: "swap" });
-const caveat = Caveat({ subsets: ["latin"], weight: ["500", "600"], variable: "--font-caveat", display: "swap" });
+const hanken = Hanken_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-hanken", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: site.name, template: `%s · ${site.name}` },
+  title: { default: `${site.name}, software engineer in Bengaluru`, template: `%s · ${site.name}` },
   description: site.description,
   openGraph: { type: "website", siteName: site.name, title: site.name, description: site.description, url: "/" },
   twitter: { card: "summary_large_image", title: site.name, description: site.description },
@@ -21,29 +21,34 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   viewportFit: "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f4f4f2" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f0f0e" },
+    { media: "(prefers-color-scheme: light)", color: "#f1efeb" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c0a08" },
   ],
 };
 
-// Runs before first paint so the saved theme is applied with no flash.
-const themeScript = `try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}`;
+// Runs before first paint: applies the saved theme (no flash) and marks the page as scripted for reveals.
+const bootScript = `try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}document.documentElement.classList.add('js')`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${hanken.variable} ${dmMono.variable} ${caveat.variable}`} suppressHydrationWarning>
+    <html lang="en" className={hanken.variable} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: bootScript }} />
+        <noscript>
+          <style>{`.js [data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
       </head>
       <body>
         <a className="skip" href="#main">
           Skip to content
         </a>
-        <RoughFilter />
-        <div className="wrap">
-          <TopBar />
-          <main id="main">{children}</main>
-        </div>
+        <StageProvider photos={stage}>
+          <div className="col">
+            <TopBar />
+            <main id="main">{children}</main>
+          </div>
+        </StageProvider>
+        <ScrollEffects />
         <footer className="sfoot">
           <div>
             <span>© 2026 {site.name}</span>

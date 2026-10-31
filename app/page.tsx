@@ -1,57 +1,70 @@
 import Link from "next/link";
-import { DoodleSvg } from "@/components/doodles";
 import { ExtLink } from "@/components/ext-link";
-import { site, socials } from "@/content/links";
-import { sections } from "@/lib/sections";
+import { HomeIndex } from "@/components/home-index";
+import { highlights } from "@/content/highlights";
+import { email, site, socials } from "@/content/links";
 
-export default function Board() {
+export default function Home() {
   return (
-    <section className="board">
-      <header>
-        <p className="hello">hi there, I&apos;m</p>
+    <>
+      <section className="hero">
         <h1>
-          <span className="name">
-            {site.name}
-            <svg className="squig" viewBox="0 0 150 9" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-              <path pathLength={1} d="M2 5 C 14 0, 22 9, 36 4 S 58 0, 72 5 S 96 9, 110 4 S 134 1, 148 5" />
-            </svg>
-          </span>
+          <span>Sambhav</span>
+          <span>Gupta</span>
         </h1>
-        <p className="meta">{site.tagline}</p>
-        <nav className="socials" aria-label="Social links">
-          {socials.map((s) => (
-            <ExtLink key={s.label} href={s.href}>
-              {s.label}
-              <span className="arr" aria-hidden="true">
-                ↗
-              </span>
-            </ExtLink>
-          ))}
-        </nav>
-      </header>
-
-      <div className="stage">
-        <div className="hint" aria-hidden="true">
-          have a look around
-          <svg viewBox="0 0 40 26" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M3 5c14-5 28-1 31 15" />
-            <path d="M26 15l8 6 3-10" />
-          </svg>
+        <div className="hero-text">
+          <p>Software engineer in Bengaluru building data pipelines at Goldman Sachs. Open source maintainer, marathon runner.</p>
+          <Link className="btn" href="/projects">
+            See my projects <span className="arr" aria-hidden="true">↗</span>
+          </Link>
+          <nav className="socials" aria-label="Social links">
+            {socials.map((s) => (
+              <ExtLink key={s.label} className="link" href={s.href}>
+                {s.label} ↗
+              </ExtLink>
+            ))}
+          </nav>
         </div>
-        <nav className="boxes" aria-label="Sections">
-          {sections.map(({ slug, title, boxDesc, Doodle }) => (
-            <Link key={slug} className="box" href={`/${slug}`}>
-              <span className="art">
-                <DoodleSvg>
-                  <Doodle />
-                </DoodleSvg>
-              </span>
-              <span className="box-name">{title}</span>
-              <span className="box-desc">{boxDesc}</span>
-            </Link>
+      </section>
+
+      <section className="sec" aria-labelledby="numbers">
+        <h2 className="sec-title" id="numbers" data-reveal>
+          What the work changed
+        </h2>
+        <div className="figs">
+          {highlights.map((h, i) => (
+            <div className="fig" key={h.figure} data-reveal style={{ ["--i" as string]: i }}>
+              <b>{h.figure}</b>
+              <span>{h.text}</span>
+            </div>
           ))}
-        </nav>
-      </div>
-    </section>
+        </div>
+      </section>
+
+      <section className="sec" aria-labelledby="around">
+        <h2 className="sec-title" id="around" data-reveal>
+          Have a look around
+        </h2>
+        <HomeIndex />
+      </section>
+
+      <section className="sec" aria-labelledby="hello">
+        <h2 className="sec-title" id="hello" data-reveal>
+          Tell me what you&apos;re building
+        </h2>
+        <div className="hello" data-reveal>
+          {email ? (
+            <a className="hello-mail link" href={`mailto:${email}`}>
+              {email}
+            </a>
+          ) : (
+            <Link className="hello-mail link" href="/contact">
+              Say hello
+            </Link>
+          )}
+          <p className="r-meta">{site.location}</p>
+        </div>
+      </section>
+    </>
   );
 }

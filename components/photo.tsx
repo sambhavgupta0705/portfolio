@@ -7,12 +7,12 @@ export function publicFileExists(dir: string, file: string): boolean {
   return fs.existsSync(path.join(process.cwd(), "public", dir, file));
 }
 
-/** A photo from /public, or the striped "photo soon" placeholder when the file is missing. */
+/** A photo from /public, or a plain "photo soon" tone block when the file is missing. */
 export function Photo({ dir, file, alt, sizes, focus }: { dir: string; file: string; alt: string; sizes: string; focus?: string }) {
   if (!publicFileExists(dir, file)) {
     return (
       <div className="photo" role="img" aria-label={`${alt}: photo coming soon`}>
-        <span aria-hidden="true">photo soon</span>
+        <span aria-hidden="true">Photo soon</span>
       </div>
     );
   }

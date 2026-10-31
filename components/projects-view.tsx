@@ -27,7 +27,7 @@ export function ProjectsView({ projects, contributions }: { projects: Project[];
 
   return (
     <>
-      <div className="tabs" role="tablist" aria-label="Filter projects">
+      <div className="tabs up" style={{ ["--d" as string]: 3 }} role="tablist" aria-label="Filter projects">
         {tabs.map((t, i) => (
           <button
             key={t.id}
@@ -44,31 +44,26 @@ export function ProjectsView({ projects, contributions }: { projects: Project[];
           </button>
         ))}
       </div>
-      <div className="pwrap" id="project-list" role="tabpanel" aria-labelledby={`tab-${filter}`}>
-        <div className="lines">
-          {shown.map((p) => (
-            <ExtLink className="line" key={p.href} href={p.href}>
+      <div id="project-list" role="tabpanel" aria-labelledby={`tab-${filter}`}>
+        <div className="rows">
+          {shown.map((p, i) => (
+            <ExtLink className="row" key={p.href} href={p.href} data-reveal style={{ ["--i" as string]: i }}>
               <div>
-                <div className="l-title">{p.title}</div>
-                <div className="l-sub">{p.description}</div>
-                <div className="l-meta">{[categoryLabel[p.category], ...(p.stack ?? [])].join(" · ")}</div>
+                <h2 className="r-title">{p.title}</h2>
+                <div className="r-sub">{p.description}</div>
+                <div className="r-meta">{[categoryLabel[p.category], ...(p.stack ?? [])].join(" · ")}</div>
               </div>
-              <span className="l-side">{p.linkLabel ?? "GitHub"} ↗</span>
+              <span className="r-side">{p.linkLabel ?? "GitHub"} ↗</span>
             </ExtLink>
           ))}
         </div>
         {filter === "all" && (
-          <aside className="stat" aria-label="GitHub contributions">
-            <div>
-              <p className="s-label">GitHub contributions</p>
-              <p className="s-num">{contributions.toLocaleString("en-US")}</p>
-            </div>
-            <div className="s-info">
-              <p className="s-cap">across all years</p>
-              <ExtLink className="s-link" href={links.github}>
-                View profile ↗
-              </ExtLink>
-            </div>
+          <aside className="stat" aria-label="GitHub contributions" data-reveal>
+            <b>{contributions.toLocaleString("en-US")}</b>
+            <p>GitHub contributions across all years.</p>
+            <ExtLink className="link" href={links.github}>
+              View profile ↗
+            </ExtLink>
           </aside>
         )}
       </div>

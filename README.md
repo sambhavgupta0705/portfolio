@@ -1,6 +1,8 @@
 # Sambhav Gupta, portfolio
 
-Next.js (App Router) + TypeScript, plain CSS with design tokens, fonts via `next/font`. No UI library.
+Next.js (App Router) + TypeScript, plain CSS with design tokens, Hanken Grotesk via `next/font`. No UI library.
+
+**Design:** a "split stage". A fixed photograph fills the left half of the screen and changes with each page (hover a section on the home page to preview its photo); the right half is a calm reading column. On a phone the photograph becomes a band above the content. Dark mode is warm black and gold; light mode is a paper tone with a deep gold accent.
 
 ## Run it
 
@@ -25,12 +27,14 @@ Other scripts: `npm run lint`, `npm run typecheck`, `npm run build`, `npm start`
 | `experience.ts` | Places, roles, dates and the two highlight lines per place. `current: true` shows the dates in the accent colour. |
 | `races.ts` | Fitness cards in date order. `tone` is `"time"`, `"quiet"` or `"now"`. |
 | `moments.ts` | Event rows: `title`, `date`, `place`, optional `photos`. |
+| `stage.ts` | The fixed photograph for each page (`src`, `alt`, optional `focus` crop). Reuses the fitness photos. |
+| `highlights.ts` | The four big numbers on the home page. |
 
 **Email address:** set `email` in `content/links.ts` (for example `"hello@yourdomain.com"`). The postcard turns into a `mailto:` link. While it is empty, the card shows "address coming with the domain".
 
 ## Fitness photos
 
-Drop a JPG at `public/fitness/<slug>.jpg`, where `<slug>` is the race's `slug` in `content/races.ts`. For example `public/fitness/ndm.jpg`. Cards without a file show the striped "photo soon" placeholder. Photos show in a 4:3 frame and are cropped to fit; for portrait photos set `focus` (a CSS object-position such as `"50% 30%"`) on the race to choose the crop.
+Drop a JPG at `public/fitness/<slug>.jpg`, where `<slug>` is the race's `slug` in `content/races.ts`. For example `public/fitness/ndm.jpg`. Cards without a file show a plain "Photo soon" block. The Fitness page also has a Finish time / Pace per km switch: add `km` and `minutes` to a race in `content/races.ts` to give it a pace. Photos show in a 4:5 frame and are cropped to fit; to choose the crop set `focus` (a CSS object-position such as `"50% 30%"`) on the race to choose the crop.
 
 ## Adding a moment
 
