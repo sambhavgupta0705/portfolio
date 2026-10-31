@@ -134,8 +134,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .sec-title { font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2.125rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; max-width: 20ch; }
 
 /* ---------- home ---------- */
-.hero { background: var(--field); color: var(--field-ink); display: flex; }
-.hero-in { display: flex; flex-direction: column; justify-content: space-between; gap: clamp(40px, 9vh, 88px); padding-block: clamp(36px, 7vh, 64px) clamp(36px, 7vh, 64px); width: 100%; }
+.hero { background: var(--field); color: var(--field-ink); display: flex; min-height: min(calc(100svh - 72px), 680px); }
+.hero-in { display: flex; flex-direction: column; justify-content: space-between; gap: clamp(56px, 12vh, 120px); padding-block: clamp(56px, 11vh, 104px) clamp(56px, 11vh, 104px); width: 100%; }
 .hero h1 { font-size: var(--step-display); font-weight: 500; letter-spacing: -0.05em; line-height: 0.95; }
 .hero h1 span { display: inline; }
 .hero h1 span + span::before { content: " "; }
