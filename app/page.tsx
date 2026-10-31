@@ -14,7 +14,11 @@ export default function Home() {
             <span>Gupta</span>
           </h1>
           <div className="hero-text">
-            <p>Software engineer in Bengaluru building data pipelines at Goldman Sachs. Open source maintainer, marathon runner.</p>
+            <p className="caps">
+              {site.tagline}
+              <br />
+              {site.location}
+            </p>
             <div className="stack">
               <Link className="btn" href="/projects">
                 See my projects <span className="arr" aria-hidden="true">↗</span>

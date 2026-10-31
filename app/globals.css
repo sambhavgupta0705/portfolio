@@ -16,7 +16,7 @@
   --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
   --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
   --step-head: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
-  --step-display: clamp(2.75rem, 1.6rem + 4.2vw, 5.25rem);
+  --step-display: clamp(3.25rem, 1.8rem + 6vw, 7.5rem);
 
   --gutter: clamp(20px, 5vw, 72px);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -146,7 +146,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   }
 }
 .hero-text { display: grid; gap: 28px; justify-items: start; }
-.hero-text p { font-size: var(--step-lead); line-height: 1.3; max-width: 34ch; }
+.hero-text .caps { font-size: var(--step-body); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.6; }
 .hero .btn { background: var(--field-ink); color: var(--field); }
 .hero .link:hover { color: inherit; text-decoration-color: currentColor; }
 @media (min-width: 900px) { .hero-text { grid-template-columns: minmax(0, 1fr) auto; align-items: end; } .hero-text .stack { display: grid; gap: 24px; justify-items: start; } }
