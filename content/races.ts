@@ -25,7 +25,7 @@ export const races: Race[] = [
     focus: "50% 32%",
   },
   { slug: "hyrox-bengaluru", name: "Hyrox Bengaluru", date: "Apr 2026", chip: "Hyrox", result: "1:55", tone: "time", focus: "50% 38%" },
-  { slug: "tcs-world-10k-bengaluru", name: "TCS World 10K Bengaluru", date: "Apr 2026", chip: "10K", result: "48 min", tone: "time" },
+  { slug: "tcs-world-10k-bengaluru", name: "TCS World 10K Bengaluru", date: "Apr 2026", chip: "10K", result: "48 min", tone: "time", focus: "50% 45%" },
   {
     slug: "wipro-bengaluru-marathon",
     name: "Wipro Bengaluru Marathon",
@@ -33,6 +33,7 @@ export const races: Race[] = [
     chip: "Full marathon",
     result: "4:16",
     tone: "time",
+    focus: "62% 50%",
   },
   {
     slug: "tata-mumbai-marathon",
