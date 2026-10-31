@@ -22,7 +22,7 @@ export const experience: Place[] = [
       { title: "Seasonal Analyst", dates: "Jan 2025 – June 2025" },
     ],
     highlights: [
-      "Replaced a legacy data system with an Apache Flink and Kafka pipeline that delivers data downstream in under 2 minutes.",
+      "Replaced a legacy data system with an ETL pipeline that delivers data downstream in under 2 minutes.",
       "Brought vendor data feeds into the firm's lakehouse, cutting manual effort by 45%.",
     ],
   },
