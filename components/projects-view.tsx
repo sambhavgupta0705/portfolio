@@ -53,7 +53,7 @@ export function ProjectsView({ projects, contributions }: { projects: Project[];
                 <div className="l-sub">{p.description}</div>
                 <div className="l-meta">{[categoryLabel[p.category], ...(p.stack ?? [])].join(" · ")}</div>
               </div>
-              <span className="l-side">GitHub ↗</span>
+              <span className="l-side">{p.linkLabel ?? "GitHub"} ↗</span>
             </ExtLink>
           ))}
         </div>

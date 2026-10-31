@@ -10,7 +10,7 @@ export const site = {
 };
 
 /** Set this to your address when the domain is ready, e.g. "hello@example.com". Empty = placeholder card. */
-export const email = "";
+export const email = "sambhavwork75@gmail.com";
 
 export const githubLogin = "sambhavgupta0705";
 

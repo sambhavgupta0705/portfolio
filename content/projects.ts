@@ -4,6 +4,8 @@ export type ProjectCategory = "opensource" | "personal";
 
 export type Project = {
   title: string;
+  /** Label on the right of the row. Defaults to "GitHub". */
+  linkLabel?: string;
   description: string;
   category: ProjectCategory;
   href: string;
@@ -17,16 +19,24 @@ export const categoryLabel: Record<ProjectCategory, string> = {
 
 export const projects: Project[] = [
   {
-    title: "AsyncAPI website",
+    title: "AsyncAPI Website",
     description: "Added caching and a responsive redesign that cut page load time by about 30%.",
     category: "opensource",
     href: "https://github.com/asyncapi/website",
   },
   {
-    title: "AsyncAPI extensions catalog",
+    title: "AsyncAPI Extensions Catalog",
     description: "A community catalog of extensions for AsyncAPI documents.",
     category: "opensource",
     href: "https://github.com/asyncapi/extensions-catalog",
+  },
+  {
+    title: "Runwrap",
+    linkLabel: "Live site",
+    description: "A Strava recap of your running activity.",
+    category: "personal",
+    href: "https://runwrap.vercel.app",
+    stack: ["Strava"],
   },
   {
     title: "Viber",
