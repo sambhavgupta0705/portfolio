@@ -294,6 +294,14 @@ html[data-nav="top"] .nav, html[data-nav="top"] .menu-btn { display: none !impor
 .gal figcaption { margin-top: 10px; font-size: var(--step-small); color: var(--muted); }
 
 /* ---------- contact ---------- */
+.topics { margin-top: 24px; }
+@media (min-width: 760px) { .topics { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.topic { text-decoration: none; color: inherit; gap: 8px; }
+.topic strong { font-size: var(--step-lead); font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; }
+.topic span { color: var(--muted); max-width: 30ch; transition: color .25s; }
+.topic:hover span { color: var(--field-ink); }
+.t-go { font-style: normal; font-weight: 500; font-size: var(--step-small); margin-top: 8px; }
+
 .crows { margin-top: 48px; display: grid; }
 .crow { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 16px 0; text-decoration: none; transition: padding-left .25s var(--ease), color .2s; }
 .crow strong { font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem); font-weight: 500; letter-spacing: -0.045em; line-height: 1; }

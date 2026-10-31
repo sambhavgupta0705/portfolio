@@ -51,7 +51,7 @@ export const sections: Section[] = [
     slug: "contact",
     title: "Contact",
     boxDesc: "say hi",
-    sub: "Say hi, I read every message. Tell me what you're building.",
+    sub: "Say hi, I read every message.",
     description: "Get in touch with Sambhav Gupta by email, LinkedIn, X, GitHub or Instagram.",
   },
 ];

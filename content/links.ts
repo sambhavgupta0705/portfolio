@@ -60,3 +60,13 @@ export const postcards = [
   { stamp: "gh", kind: "See the code", name: "GitHub", handle: "@sambhavgupta0705", href: links.github },
   { stamp: "ig", kind: "Training and life", name: "Instagram", handle: "@sambhavv.mov", href: links.instagram },
 ];
+
+/** Conversation starters on the Contact page. Each opens an email with the subject filled in. */
+export const topics = [
+  { title: "A run together", text: "Plan a long run, pick a race or swap training notes.", subject: "Let's run" },
+  { title: "Marathons", text: "Training, pacing and race tips for a first or next marathon.", subject: "Marathon question" },
+  { title: "Open source", text: "Getting started with AsyncAPI, contributing, or Google Summer of Code.", subject: "Open source question" },
+  { title: "Hyrox", text: "Training for Hyrox Bengaluru in May 2027? Compare notes.", subject: "Hyrox training" },
+  { title: "ETL and data", text: "Data pipelines, ETL and data engineering questions.", subject: "Data engineering question" },
+  { title: "A project idea", text: "Something you're building that could use another pair of hands.", subject: "Project idea" },
+];
