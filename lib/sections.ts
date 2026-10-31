@@ -1,4 +1,4 @@
-export type SectionSlug = "projects" | "experience" | "writing" | "moments" | "fitness" | "contact";
+export type SectionSlug = "projects" | "fitness" | "gallery" | "writing" | "experience" | "contact";
 
 export type Section = {
   slug: SectionSlug;
@@ -20,11 +20,18 @@ export const sections: Section[] = [
     description: "Open source work on AsyncAPI and personal projects like Viber, Todoist and Runwrap, plus total GitHub contributions.",
   },
   {
-    slug: "experience",
-    title: "Experience",
-    boxDesc: "where I've worked",
-    sub: "Where I've worked and what I've done",
-    description: "Work at Goldman Sachs, maintaining AsyncAPI and mentoring for Google Summer of Code.",
+    slug: "fitness",
+    title: "Fitness",
+    boxDesc: "runs and races",
+    sub: "Runs, races and the training behind them",
+    description: "Marathons, half marathons, 10K and Hyrox: results and what's next.",
+  },
+  {
+    slug: "gallery",
+    title: "Photo gallery",
+    boxDesc: "races, training and people",
+    sub: "Races, training and the people along the way",
+    description: "Photos from races, training and community events.",
   },
   {
     slug: "writing",
@@ -34,18 +41,11 @@ export const sections: Section[] = [
     description: "Where Sambhav Gupta shares posts and updates: X and LinkedIn.",
   },
   {
-    slug: "moments",
-    title: "Moments",
-    boxDesc: "events and people",
-    sub: "Events I host and the people who show up",
-    description: "Events I host and the people who show up.",
-  },
-  {
-    slug: "fitness",
-    title: "Fitness",
-    boxDesc: "runs and races",
-    sub: "Runs, races and the training behind them",
-    description: "Marathons, half marathons, 10K and Hyrox: results and what's next.",
+    slug: "experience",
+    title: "Experience",
+    boxDesc: "where I've worked",
+    sub: "Where I've worked and what I've done",
+    description: "Work at Goldman Sachs, maintaining AsyncAPI and mentoring for Google Summer of Code.",
   },
   {
     slug: "contact",

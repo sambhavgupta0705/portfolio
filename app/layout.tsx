@@ -30,7 +30,7 @@ const bootScript = `try{var t=localStorage.getItem('theme');if(t==='dark'||t==='
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={hanken.variable} suppressHydrationWarning>
+    <html lang="en" className={hanken.variable} data-nav="top" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: bootScript }} />
         <noscript>
@@ -42,15 +42,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a className="skip" href="#main">
           Skip to content
         </a>
-        <div className="wrap">
-          <TopBar />
-        </div>
+        <TopBar />
         <main id="main">{children}</main>
         <ScrollEffects />
         <footer className="sfoot">
           <div>
             <span>© 2026 {site.name}</span>
-            <span>{site.location}</span>
           </div>
         </footer>
       </body>

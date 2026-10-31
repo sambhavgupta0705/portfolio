@@ -16,7 +16,7 @@ Other scripts: `npm run lint`, `npm run typecheck`, `npm run build`, `npm start`
 
 ## Routes
 
-`/` is the board. Section pages: `/projects`, `/experience`, `/writing`, `/moments`, `/fitness`, `/contact` (numbered 01 to 06). `Esc` goes back to the board. The theme follows the system; the toggle overrides it and is saved in `localStorage`.
+`/` is the board. Section pages: `/projects`, `/experience`, `/writing`, `/gallery`, `/fitness`, `/contact` (numbered 01 to 06). `Esc` goes back to the board. The theme follows the system; the toggle overrides it and is saved in `localStorage`.
 
 ## Editing content (`/content`)
 
@@ -26,7 +26,7 @@ Other scripts: `npm run lint`, `npm run typecheck`, `npm run build`, `npm start`
 | `projects.ts` | Project rows (`category` is `"opensource"` or `"personal"`, optional `stack`). Also `lastKnownContributions`, the fallback for the GitHub card. |
 | `experience.ts` | Places, roles, dates and the two highlight lines per place. `current: true` shows the dates in the accent colour. |
 | `races.ts` | Fitness cards in date order. `tone` is `"time"`, `"quiet"` or `"now"`. |
-| `moments.ts` | Event rows: `title`, `date`, `place`, optional `photos`. |
+| `gallery.ts` | The Photo gallery: each photo's `src`, `alt`, `caption` and optional `focus` crop. |
 | `highlights.ts` | The four big numbers on the home page. |
 
 **Email address:** set `email` in `content/links.ts` (for example `"hello@yourdomain.com"`). The postcard turns into a `mailto:` link. While it is empty, the card shows "address coming with the domain".
@@ -35,14 +35,13 @@ Other scripts: `npm run lint`, `npm run typecheck`, `npm run build`, `npm start`
 
 Drop a JPG at `public/fitness/<slug>.jpg`, where `<slug>` is the race's `slug` in `content/races.ts`. For example `public/fitness/ndm.jpg`. Cards without a file show a plain "Photo soon" block. The Fitness page also has a Finish time / Pace per km switch: add `km` and `minutes` to a race in `content/races.ts` to give it a pace. Photos show in a 4:5 frame and are cropped to fit; to choose the crop set `focus` (a CSS object-position such as `"50% 30%"`) on the race to choose the crop.
 
-## Adding a moment
+## Adding gallery photos
 
-1. Put photos in `public/moments/`.
-2. Add an entry to `content/moments.ts`:
+1. Put the photo in `public/gallery/`.
+2. Add a line to `content/gallery.ts`:
    ```ts
-   { title: "Community meetup", date: "Mar 2026", place: "Bengaluru", photos: ["meetup-1.jpg", "meetup-2.jpg"] }
+   { src: "/gallery/meetup.jpg", alt: "People at the Bengaluru meetup", caption: "Community meetup, Mar 2026" }
    ```
-   While the array is empty, the page shows the "Adding soon" row.
 
 ## GitHub contributions (live)
 

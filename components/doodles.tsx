@@ -39,7 +39,7 @@ export function SectionDoodle({ slug }: { slug: SectionSlug }) {
           <path {...P} d="M74 24 L94 44" />
         </>
       )}
-      {slug === "moments" && (
+      {slug === "gallery" && (
         <>
           <rect {...P} x="20" y="12" width="80" height="76" rx="3" />
           <rect {...P} x="29" y="21" width="62" height="46" />

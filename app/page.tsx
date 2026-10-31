@@ -40,20 +40,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="sec wrap" aria-labelledby="numbers">
-        <h2 className="sec-title" id="numbers" data-reveal>
-          What the work changed
-        </h2>
-        <div className="figs">
-          {highlights.map((h, i) => (
-            <div className="fig" key={h.figure} data-reveal style={{ ["--i" as string]: i }}>
-              <b>{h.figure}</b>
-              <span>{h.text}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section className="sec wrap" aria-labelledby="around">
         <h2 className="sec-title" id="around" data-reveal>
           Have a look around
@@ -68,21 +54,38 @@ export default function Home() {
         </nav>
       </section>
 
+      <section className="sec wrap" aria-labelledby="numbers">
+        <h2 className="sec-title" id="numbers" data-reveal>
+          Cool achievements so far
+        </h2>
+        <div className="cards">
+          {highlights.map((h, i) => (
+            <div className="card" key={h.figure} data-reveal style={{ ["--i" as string]: i }}>
+              <b>{h.figure}</b>
+              <span>{h.text}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="sec wrap" aria-labelledby="hello">
         <h2 className="sec-title" id="hello" data-reveal>
-          Tell me what you&apos;re building
+          Have anything cool in mind?
         </h2>
         <div className="hello" data-reveal>
-          {email ? (
-            <a className="hello-mail link" href={`mailto:${email}`}>
-              {email}
-            </a>
-          ) : (
-            <Link className="hello-mail link" href="/contact">
-              Say hello
-            </Link>
-          )}
-          <p className="r-meta">{site.location}</p>
+          <p className="hello-line">
+            Want to organize a run? Hit me up at{" "}
+            {email ? (
+              <a className="link hello-mail" href={`mailto:${email}`}>
+                {email}
+              </a>
+            ) : (
+              <Link className="link hello-mail" href="/contact">
+                the contact page
+              </Link>
+            )}
+            .
+          </p>
         </div>
       </section>
     </>

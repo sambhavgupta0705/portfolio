@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
+import { Sparkle } from "@/components/doodles";
 import type { Race } from "@/content/races";
 
 export type FitnessItem = Race & { photo: ReactNode };
@@ -31,7 +32,10 @@ export function FitnessView({ items }: { items: FitnessItem[] }) {
           const showPace = mode === "pace" && r.tone === "time" && r.km && r.minutes;
           return (
             <article className="fcard" key={r.slug} data-reveal style={{ ["--i" as string]: i % 2 }}>
-              {r.photo}
+              <div className="frame" style={{ ["--r" as string]: `${i % 2 ? 1.2 : -1.4}deg` }}>
+                {r.photo}
+                {i % 2 === 0 && <Sparkle />}
+              </div>
               <h2>{r.name}</h2>
               {showPace ? (
                 <p className="f-time">

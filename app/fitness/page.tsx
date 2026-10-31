@@ -1,4 +1,5 @@
 import { ExtLink } from "@/components/ext-link";
+import { FitnessProgress } from "@/components/fitness-progress";
 import { FitnessView } from "@/components/fitness-view";
 import { PageHead } from "@/components/page-head";
 import { Photo } from "@/components/photo";
@@ -19,6 +20,7 @@ export default function FitnessPage() {
       <PageHead section={getSection("fitness")} />
       <div className="wrap body">
         <FitnessView items={items} />
+        <FitnessProgress />
         <div className="rows after">
         <ExtLink className="row" href={fitnessLink.href}>
           <div>
