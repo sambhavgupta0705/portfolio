@@ -8,9 +8,9 @@ export const metadata = sectionMetadata("contact");
 
 export default function ContactPage() {
   return (
-    <section>
+    <>
       <PageHead section={getSection("contact")} />
-      <div className="crows">
+      <div className="wrap body crows">
         {email ? (
           <a className="crow" href={`mailto:${email}`} data-reveal>
             <strong>Email</strong>
@@ -29,6 +29,6 @@ export default function ContactPage() {
           </ExtLink>
         ))}
       </div>
-    </section>
+    </>
   );
 }

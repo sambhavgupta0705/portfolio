@@ -15,10 +15,11 @@ export default function FitnessPage() {
     photo: <Photo dir="fitness" file={`${r.slug}.jpg`} alt={r.name} focus={r.focus} sizes="(min-width: 900px) 24vw, 90vw" />,
   }));
   return (
-    <section>
+    <>
       <PageHead section={getSection("fitness")} />
-      <FitnessView items={items} />
-      <div className="rows after">
+      <div className="wrap body">
+        <FitnessView items={items} />
+        <div className="rows after">
         <ExtLink className="row" href={fitnessLink.href}>
           <div>
             <h2 className="r-title">{fitnessLink.title}</h2>
@@ -26,7 +27,8 @@ export default function FitnessPage() {
           </div>
           <span className="r-side">{fitnessLink.side} ↗</span>
         </ExtLink>
+        </div>
       </div>
-    </section>
+    </>
   );
 }

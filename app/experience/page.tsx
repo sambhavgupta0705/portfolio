@@ -9,13 +9,13 @@ export const metadata = sectionMetadata("experience");
 
 export default function ExperiencePage() {
   return (
-    <section>
+    <>
       <PageHead section={getSection("experience")}>
         <ExtLink className="btn" style={{ marginTop: 28 }} href={resumeUrl}>
           View resume <span className="arr" aria-hidden="true">↗</span>
         </ExtLink>
       </PageHead>
-      <div className="places">
+      <div className="wrap body places">
         {experience.map((place) => (
           <div className="place" key={place.name}>
             <h2 data-reveal>{place.name}</h2>
@@ -38,6 +38,6 @@ export default function ExperiencePage() {
           </div>
         ))}
       </div>
-    </section>
+    </>
   );
 }

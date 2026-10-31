@@ -2,7 +2,7 @@
 
 Next.js (App Router) + TypeScript, plain CSS with design tokens, Hanken Grotesk via `next/font`. No UI library.
 
-**Design:** a "split stage". A fixed photograph fills the left half of the screen and changes with each page (hover a section on the home page to preview its photo); the right half is a calm reading column. On a phone the photograph becomes a band above the content. Dark mode is warm black and gold; light mode is a paper tone with a deep gold accent.
+**Design:** a single full-width layout in warm black and gold (dark) or paper and gold (light). The home page and every section open with a gold band holding the title. Photos appear only on the Fitness page.
 
 ## Run it
 
@@ -27,7 +27,6 @@ Other scripts: `npm run lint`, `npm run typecheck`, `npm run build`, `npm start`
 | `experience.ts` | Places, roles, dates and the two highlight lines per place. `current: true` shows the dates in the accent colour. |
 | `races.ts` | Fitness cards in date order. `tone` is `"time"`, `"quiet"` or `"now"`. |
 | `moments.ts` | Event rows: `title`, `date`, `place`, optional `photos`. |
-| `stage.ts` | The fixed photograph for each page (`src`, `alt`, optional `focus` crop). Reuses the fitness photos. |
 | `highlights.ts` | The four big numbers on the home page. |
 
 **Email address:** set `email` in `content/links.ts` (for example `"hello@yourdomain.com"`). The postcard turns into a `mailto:` link. While it is empty, the card shows "address coming with the domain".

@@ -11,9 +11,11 @@ export const revalidate = 86400;
 export default async function ProjectsPage() {
   const contributions = await getLifetimeContributions();
   return (
-    <section>
+    <>
       <PageHead section={getSection("projects")} />
-      <ProjectsView projects={projects} contributions={contributions} />
-    </section>
+      <div className="wrap body">
+        <ProjectsView projects={projects} contributions={contributions} />
+      </div>
+    </>
   );
 }

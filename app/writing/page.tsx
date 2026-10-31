@@ -8,9 +8,9 @@ export const metadata = sectionMetadata("writing");
 
 export default function WritingPage() {
   return (
-    <section>
+    <>
       <PageHead section={getSection("writing")} />
-      <div className="rows" style={{ marginTop: 48 }}>
+      <div className="wrap body rows">
         {writing.map((w, i) => (
           <ExtLink className="row" key={w.href} href={w.href}>
             <div>
@@ -21,6 +21,6 @@ export default function WritingPage() {
           </ExtLink>
         ))}
       </div>
-    </section>
+    </>
   );
 }

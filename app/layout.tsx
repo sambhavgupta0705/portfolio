@@ -1,10 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Hanken_Grotesk } from "next/font/google";
 import { ScrollEffects } from "@/components/scroll-effects";
-import { StageProvider } from "@/components/stage";
 import { TopBar } from "@/components/top-bar";
 import { site } from "@/content/links";
-import { stage } from "@/content/stage";
 import "./globals.css";
 
 const hanken = Hanken_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-hanken", display: "swap" });
@@ -42,12 +40,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a className="skip" href="#main">
           Skip to content
         </a>
-        <StageProvider photos={stage}>
-          <div className="col">
-            <TopBar />
-            <main id="main">{children}</main>
-          </div>
-        </StageProvider>
+        <div className="wrap">
+          <TopBar />
+        </div>
+        <main id="main">{children}</main>
         <ScrollEffects />
         <footer className="sfoot">
           <div>

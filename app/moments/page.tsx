@@ -8,9 +8,9 @@ export const metadata = sectionMetadata("moments");
 
 export default function MomentsPage() {
   return (
-    <section>
+    <>
       <PageHead section={getSection("moments")} />
-      <div className="rows" style={{ marginTop: 48 }}>
+      <div className="wrap body rows">
         {moments.length === 0 ? (
           <div className="row off up" style={{ ["--d" as string]: 3 }}>
             <div>
@@ -38,6 +38,6 @@ export default function MomentsPage() {
           ))
         )}
       </div>
-    </section>
+    </>
   );
 }

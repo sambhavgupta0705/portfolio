@@ -1,33 +1,37 @@
 import Link from "next/link";
 import { ExtLink } from "@/components/ext-link";
-import { HomeIndex } from "@/components/home-index";
 import { highlights } from "@/content/highlights";
 import { email, site, socials } from "@/content/links";
+import { sections } from "@/lib/sections";
 
 export default function Home() {
   return (
     <>
       <section className="hero">
-        <h1>
-          <span>Sambhav</span>
-          <span>Gupta</span>
-        </h1>
-        <div className="hero-text">
-          <p>Software engineer in Bengaluru building data pipelines at Goldman Sachs. Open source maintainer, marathon runner.</p>
-          <Link className="btn" href="/projects">
-            See my projects <span className="arr" aria-hidden="true">↗</span>
-          </Link>
-          <nav className="socials" aria-label="Social links">
-            {socials.map((s) => (
-              <ExtLink key={s.label} className="link" href={s.href}>
-                {s.label} ↗
-              </ExtLink>
-            ))}
-          </nav>
+        <div className="wrap hero-in">
+          <h1>
+            <span>Sambhav</span>
+            <span>Gupta</span>
+          </h1>
+          <div className="hero-text">
+            <p>Software engineer in Bengaluru building data pipelines at Goldman Sachs. Open source maintainer, marathon runner.</p>
+            <div className="stack">
+              <Link className="btn" href="/projects">
+                See my projects <span className="arr" aria-hidden="true">↗</span>
+              </Link>
+              <nav className="socials" aria-label="Social links">
+                {socials.map((s) => (
+                  <ExtLink key={s.label} className="link" href={s.href}>
+                    {s.label} ↗
+                  </ExtLink>
+                ))}
+              </nav>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="sec" aria-labelledby="numbers">
+      <section className="sec wrap" aria-labelledby="numbers">
         <h2 className="sec-title" id="numbers" data-reveal>
           What the work changed
         </h2>
@@ -41,14 +45,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="sec" aria-labelledby="around">
+      <section className="sec wrap" aria-labelledby="around">
         <h2 className="sec-title" id="around" data-reveal>
           Have a look around
         </h2>
-        <HomeIndex />
+        <nav className="index" aria-label="Sections">
+          {sections.map((s, i) => (
+            <Link key={s.slug} href={`/${s.slug}`} data-reveal style={{ ["--i" as string]: i }}>
+              <strong>{s.title}</strong>
+              <span>{s.boxDesc}</span>
+            </Link>
+          ))}
+        </nav>
       </section>
 
-      <section className="sec" aria-labelledby="hello">
+      <section className="sec wrap" aria-labelledby="hello">
         <h2 className="sec-title" id="hello" data-reveal>
           Tell me what you&apos;re building
         </h2>
