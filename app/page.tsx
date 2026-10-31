@@ -1,8 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Sparkle, Squiggle } from "@/components/doodles";
 import { ExtLink } from "@/components/ext-link";
 import { highlights } from "@/content/highlights";
 import { email, site, socials } from "@/content/links";
+import { showcase } from "@/content/showcase";
 import { sections } from "@/lib/sections";
 
 export default function Home() {
@@ -65,6 +67,43 @@ export default function Home() {
               <span>{h.text}</span>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="sec wrap" aria-labelledby="stuff">
+        <h2 className="sec-title" id="stuff" data-reveal>
+          Cool stuff I&apos;ve made and done
+        </h2>
+        <div className="showcase">
+          {showcase.map((it, i) => {
+            const inner = (
+              <>
+                <div className={`show-media${it.panel ? ` ${it.panel}` : ""}`}>
+                  {it.image ? (
+                    <Image src={it.image.src} alt={it.image.alt} fill sizes="(min-width: 760px) 600px, 92vw" style={it.image.focus ? { objectPosition: it.image.focus } : undefined} />
+                  ) : (
+                    <span className="show-word" aria-hidden="true">
+                      {it.wordmark}
+                    </span>
+                  )}
+                </div>
+                <h3>{it.title}</h3>
+                <p>{it.text}</p>
+                <span className="show-cta">
+                  {it.cta} <span aria-hidden="true">↗</span>
+                </span>
+              </>
+            );
+            return it.href.startsWith("/") ? (
+              <Link key={it.title} className="show" href={it.href} data-reveal style={{ ["--i" as string]: i % 2 }}>
+                {inner}
+              </Link>
+            ) : (
+              <ExtLink key={it.title} className="show" href={it.href} data-reveal style={{ ["--i" as string]: i % 2 }}>
+                {inner}
+              </ExtLink>
+            );
+          })}
         </div>
       </section>
 
