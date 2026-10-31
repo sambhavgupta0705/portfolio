@@ -3,7 +3,7 @@
 export const site = {
   name: "Sambhav Gupta",
   location: "Bengaluru, India",
-  tagline: "Software engineer · Community",
+  tagline: "Software engineer · Community · Marathon runner",
   description:
     "Sambhav Gupta is a software engineer in Bengaluru working on data pipelines, open source and community, and running marathons.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com",
