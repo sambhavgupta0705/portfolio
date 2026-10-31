@@ -23,7 +23,7 @@ export const experience: Place[] = [
     ],
     highlights: [
       "Replaced a legacy data system with an Apache Flink and Kafka pipeline that delivers data downstream in under 2 minutes.",
-      "Brought vendor data feeds into the firm's lakehouse, cutting manual trade pre-clearance effort by 45%.",
+      "Brought vendor data feeds into the firm's lakehouse, cutting manual effort by 45%.",
     ],
   },
   {
