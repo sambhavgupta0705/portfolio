@@ -8,7 +8,7 @@ export function publicFileExists(dir: string, file: string): boolean {
 }
 
 /** A photo from /public, or the striped "photo soon" placeholder when the file is missing. */
-export function Photo({ dir, file, alt, sizes }: { dir: string; file: string; alt: string; sizes: string }) {
+export function Photo({ dir, file, alt, sizes, focus }: { dir: string; file: string; alt: string; sizes: string; focus?: string }) {
   if (!publicFileExists(dir, file)) {
     return (
       <div className="photo" role="img" aria-label={`${alt}: photo coming soon`}>
@@ -18,7 +18,7 @@ export function Photo({ dir, file, alt, sizes }: { dir: string; file: string; al
   }
   return (
     <div className="photo">
-      <Image src={`/${dir}/${file}`} alt={alt} fill sizes={sizes} />
+      <Image src={`/${dir}/${file}`} alt={alt} fill sizes={sizes} style={focus ? { objectPosition: focus } : undefined} />
     </div>
   );
 }

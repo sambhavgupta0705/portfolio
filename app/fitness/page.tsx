@@ -15,7 +15,7 @@ export default function FitnessPage() {
       <div className="fgrid">
         {races.map((r) => (
           <article className="fcard" key={r.slug}>
-            <Photo dir="fitness" file={`${r.slug}.jpg`} alt={r.name} sizes="(min-width: 1000px) 300px, (min-width: 560px) 45vw, 90vw" />
+            <Photo dir="fitness" file={`${r.slug}.jpg`} alt={r.name} focus={r.focus} sizes="(min-width: 1000px) 300px, (min-width: 560px) 45vw, 90vw" />
             <div className="fbody">
               <div className="f-meta">
                 <span>{r.date}</span>

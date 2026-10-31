@@ -30,7 +30,7 @@ Other scripts: `npm run lint`, `npm run typecheck`, `npm run build`, `npm start`
 
 ## Fitness photos
 
-Drop a JPG at `public/fitness/<slug>.jpg`, where `<slug>` is the race's `slug` in `content/races.ts`. For example `public/fitness/ndm.jpg`. Cards without a file show the striped "photo soon" placeholder. Photos are 4:3 and are cropped to fit.
+Drop a JPG at `public/fitness/<slug>.jpg`, where `<slug>` is the race's `slug` in `content/races.ts`. For example `public/fitness/ndm.jpg`. Cards without a file show the striped "photo soon" placeholder. Photos show in a 4:3 frame and are cropped to fit; for portrait photos set `focus` (a CSS object-position such as `"50% 30%"`) on the race to choose the crop.
 
 ## Adding a moment
 
