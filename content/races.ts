@@ -42,6 +42,7 @@ export const races: Race[] = [
     chip: "Upcoming",
     result: "In training",
     tone: "now",
+    focus: "50% 55%",
   },
   {
     slug: "hyrox-bengaluru-2027",
@@ -50,5 +51,6 @@ export const races: Race[] = [
     chip: "Upcoming",
     result: "In training",
     tone: "now",
+    focus: "50% 55%",
   },
 ];
