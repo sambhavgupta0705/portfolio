@@ -37,7 +37,7 @@ export function TopBar() {
     <div className="topbar">
       {!onBoard && (
         <Link className="back" href="/">
-          ← Back to the board
+          ← All sections
         </Link>
       )}
       <button className="toggle" type="button" onClick={toggle} aria-label="Switch between light and dark theme">
