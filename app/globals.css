@@ -27,9 +27,9 @@
     --surface: #181512;
     --ink: #ffffff;
     --muted: #a39d96;
-    --accent: #c9a45a;
+    --accent: #e3b94e;
     --accent-ink: #0c0a08;
-    --field: #c9a45a;
+    --field: #f6c437;
     --field-ink: #0c0a08;
     color-scheme: dark;
   }
@@ -39,9 +39,9 @@
   --surface: #181512;
   --ink: #ffffff;
   --muted: #a39d96;
-  --accent: #c9a45a;
+  --accent: #e3b94e;
   --accent-ink: #0c0a08;
-  --field: #c9a45a;
+  --field: #f6c437;
   --field-ink: #0c0a08;
   color-scheme: dark;
 }

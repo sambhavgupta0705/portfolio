@@ -42,34 +42,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="sec wrap" aria-labelledby="around">
-        <h2 className="sec-title" id="around" data-reveal>
-          Have a look around
-        </h2>
-        <nav className="index" aria-label="Sections">
-          {sections.map((s, i) => (
-            <Link key={s.slug} href={`/${s.slug}`} data-reveal style={{ ["--i" as string]: i }}>
-              <strong>{s.title}</strong>
-              <span>{s.boxDesc}</span>
-            </Link>
-          ))}
-        </nav>
-      </section>
-
-      <section className="sec wrap" aria-labelledby="numbers">
-        <h2 className="sec-title" id="numbers" data-reveal>
-          Cool achievements so far
-        </h2>
-        <div className="cards">
-          {highlights.map((h, i) => (
-            <div className="card" key={h.figure} data-reveal style={{ ["--i" as string]: i }}>
-              <b>{h.figure}</b>
-              <span>{h.text}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section className="sec wrap" aria-labelledby="stuff">
         <h2 className="sec-title" id="stuff" data-reveal>
           Cool stuff I&apos;ve made and done
@@ -105,6 +77,34 @@ export default function Home() {
             );
           })}
         </div>
+      </section>
+
+      <section className="sec wrap" aria-labelledby="numbers">
+        <h2 className="sec-title" id="numbers" data-reveal>
+          Cool achievements so far
+        </h2>
+        <div className="cards">
+          {highlights.map((h, i) => (
+            <div className="card" key={h.figure} data-reveal style={{ ["--i" as string]: i }}>
+              <b>{h.figure}</b>
+              <span>{h.text}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="sec wrap" aria-labelledby="around">
+        <h2 className="sec-title" id="around" data-reveal>
+          Have a look around
+        </h2>
+        <nav className="index" aria-label="Sections">
+          {sections.map((s, i) => (
+            <Link key={s.slug} href={`/${s.slug}`} data-reveal style={{ ["--i" as string]: i }}>
+              <strong>{s.title}</strong>
+              <span>{s.boxDesc}</span>
+            </Link>
+          ))}
+        </nav>
       </section>
 
       <section className="sec wrap" aria-labelledby="hello">
